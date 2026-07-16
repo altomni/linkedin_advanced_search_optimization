@@ -59,8 +59,52 @@ ASO_V3_PORT=8080 docker compose up -d --build   # custom 部署端口
 curl http://127.0.0.1:5178/v3/health  # verify; Swagger UI at /docs
 ```
 
+Call the deployed service with one JD over HTTP (start the service first) — using the
+sample JD in `examples/`:
+
+```bash
+python examples/example_service.py examples/senior_backend_engineer_jd.txt
+# non-default host/port:
+ASO_V3_SERVICE_URL=http://127.0.0.1:8080 python examples/example_service.py examples/senior_backend_engineer_jd.txt
+```
+
+This POSTs to `/v3/optimize-and-fetch` and writes the unioned candidates to
+`union_candidates.csv` — the HTTP counterpart of the in-process `example.py`.
+
 Secrets come from `.env` at runtime (`env_file` in compose.yaml) — they are never baked
 into the image (`.env` is in `.dockerignore`).
+
+Tear the service down when you're done:
+
+```bash
+docker compose down                   # stop + remove the container and network
+docker compose down --rmi local       # also remove the built linkedin-aso image
+docker compose logs -f linkedin-aso   # (optional) tail logs before tearing down
+```
+
+## Testing
+
+Offline suite (all LLM / LinkedIn calls are mocked — no network, no API cost):
+
+```bash
+pytest tests/
+```
+
+Live integration test against a **running Docker-deployed service**
+(`tests/test_docker_service.py`) — self-skips when the service is down, so it never
+breaks the offline run:
+
+```bash
+docker compose up -d --build                 # start the service first
+
+pytest tests/test_docker_service.py          # health + input-validation only (fast, free)
+ASO_V3_RUN_FETCH=1 pytest tests/test_docker_service.py   # + full /v3/optimize-and-fetch
+```
+
+- Target a non-default host/port with `ASO_V3_SERVICE_URL` (default `http://127.0.0.1:5178`).
+- The whole module skips unless `/v3/health` is reachable.
+- `test_optimize_and_fetch_live` additionally requires `ASO_V3_RUN_FETCH=1`, because it
+  runs real LLM extraction + LinkedIn fetches (minutes of wall-clock, real API cost).
 
 ## Tuning (env vars)
 

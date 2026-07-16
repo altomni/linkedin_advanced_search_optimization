@@ -1,0 +1,19 @@
+Senior Backend Software Engineer
+
+We are hiring a Senior Backend Software Engineer to join our platform team in
+San Francisco, CA. You will design and build scalable distributed systems and
+REST APIs that power our core product.
+
+Responsibilities:
+- Design, build, and maintain backend services in Python and Go
+- Own the architecture of high-throughput microservices on AWS
+- Build and optimize data pipelines and PostgreSQL-backed storage
+- Collaborate with product and frontend teams
+
+Requirements:
+- 5+ years of professional backend software engineering experience
+- Strong proficiency in Python; experience with Go a plus
+- Deep experience with distributed systems, microservices, and REST API design
+- Hands-on experience with AWS, Docker, and Kubernetes
+- Experience with PostgreSQL and Redis
+- BS or MS in Computer Science or related field
