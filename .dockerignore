@@ -1,0 +1,14 @@
+# Secrets — pass at runtime with --env-file instead of baking into the image
+.env
+
+.venv/
+.git/
+.idea/
+.pytest_cache/
+__pycache__/
+**/__pycache__/
+*.pyc
+tests/
+union_candidates.csv
+Dockerfile
+.dockerignore

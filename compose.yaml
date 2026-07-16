@@ -1,0 +1,12 @@
+services:
+  linkedin-aso:
+    build: .
+    image: linkedin-aso
+    container_name: linkedin-aso
+    env_file: .env
+    environment:
+      ASO_V3_HOST: 0.0.0.0
+      PORT: ${ASO_V3_PORT:-5178}       # 部署端口 (container-internal, matches serve.py)
+    ports:
+      - "${ASO_V3_PORT:-5178}:${ASO_V3_PORT:-5178}"   # host:container 部署端口
+    restart: unless-stopped

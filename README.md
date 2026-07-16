@@ -7,7 +7,8 @@ transitive dependency closure copied in. No import from the parent repo is requi
 ## Layout
 
 ```
-advanced_search_optimization_v3.py   # the optimizer: single_process(...) is the entry point
+optimize_and_fetch.py                # entry point: optimize_and_fetch_union(...) = optimize -> fetch -> union
+advanced_search_optimization_v3.py   # the optimizer: single_process(...), used by optimize_and_fetch.py
 prompts.py                           # LLM extraction prompt templates
 jd_smart_interactive_search_process.py / jd_understanding_funcs.py / linkedin_integration_service.py
 config/                              # config, api_config, linkedin_enums + linkedin_enum_data/*.json
@@ -27,19 +28,39 @@ cp .env.example .env   # fill in the keys, contact for the setting details
 ## Usage
 
 ```python
-from advanced_search_optimization_v3 import single_process
+from optimize_and_fetch import optimize_and_fetch_union
 
-result = single_process(
-    initial_conditions={}, mandatory_skills=[], relaxation_options={},
-    min_target=200, max_target=600,
+union_df, stats = optimize_and_fetch_union(
     job_desc=open("my_jd.txt").read(),   # JD-driven multi-archetype mode
+    min_target=200, max_target=600,
+    max_search_num=200,                  # per-archetype fetch cap
 )
-# result["archetypes"]      -> one optimized search condition per archetype (+ widened variants)
-# result["final_count"]     -> merged union estimated count
-# result["format_filter_conditions"] -> merged recruiter-format condition
+# union_df -> candidate DataFrame, unioned across archetypes, deduped by linkedin_id
+# stats    -> n_archetypes, per_archetype fetch counts, final_count_estimate,
+#             union_unique, optimize_seconds / fetch_seconds
 ```
 
-Or `python example.py path/to/jd.txt`.
+Or from the command line:
+
+```bash
+python example.py path/to/jd.txt
+# or with more knobs:
+python optimize_and_fetch.py path/to/jd.txt --max-search 200 --out union.csv
+```
+
+## Deployment (Docker)
+
+REST service (`serve.py`, FastAPI + uvicorn) on port **5178** by default — override with
+`ASO_V3_PORT`:
+
+```bash
+docker compose up -d --build          # http://127.0.0.1:5178
+ASO_V3_PORT=8080 docker compose up -d --build   # custom 部署端口
+curl http://127.0.0.1:5178/v3/health  # verify; Swagger UI at /docs
+```
+
+Secrets come from `.env` at runtime (`env_file` in compose.yaml) — they are never baked
+into the image (`.env` is in `.dockerignore`).
 
 ## Tuning (env vars)
 
