@@ -1,0 +1,1206 @@
+[
+  [
+    "Abrasives and Nonmetallic Minerals Manufacturing",
+    "urn:li:ts_industry:799"
+  ],
+  [
+    "Accounting",
+    "urn:li:ts_industry:47"
+  ],
+  [
+    "Accessible Architecture and Design",
+    "urn:li:ts_industry:3246"
+  ],
+  [
+    "Accessible Hardware Manufacturing",
+    "urn:li:ts_industry:3245"
+  ],
+  [
+    "Digital Accessibility Services",
+    "urn:li:ts_industry:3244"
+  ],
+  [
+    "Accommodation and Food Services",
+    "urn:li:ts_industry:2190"
+  ],
+  [
+    "Claims Adjusting, Actuarial Services",
+    "urn:li:ts_industry:1738"
+  ],
+  [
+    "Fashion Accessories Manufacturing",
+    "urn:li:ts_industry:615"
+  ],
+  [
+    "Education Administration Programs",
+    "urn:li:ts_industry:69"
+  ],
+  [
+    "Government Administration",
+    "urn:li:ts_industry:75"
+  ],
+  [
+    "Advertising Services",
+    "urn:li:ts_industry:80"
+  ],
+  [
+    "Administration of Justice",
+    "urn:li:ts_industry:73"
+  ],
+  [
+    "Utilities Administration",
+    "urn:li:ts_industry:3086"
+  ],
+  [
+    "Office Administration",
+    "urn:li:ts_industry:1916"
+  ],
+  [
+    "Administrative and Support Services",
+    "urn:li:ts_industry:1912"
+  ],
+  [
+    "Investment Advice",
+    "urn:li:ts_industry:1720"
+  ],
+  [
+    "Paint, Coating, and Adhesive Manufacturing",
+    "urn:li:ts_industry:722"
+  ],
+  [
+    "Aviation and Aerospace Component Manufacturing",
+    "urn:li:ts_industry:52"
+  ],
+  [
+    "International Affairs",
+    "urn:li:ts_industry:74"
+  ],
+  [
+    "Military and International Affairs",
+    "urn:li:ts_industry:2391"
+  ],
+  [
+    "Collection Agencies",
+    "urn:li:ts_industry:1938"
+  ],
+  [
+    "Insurance Agencies and Brokerages",
+    "urn:li:ts_industry:1737"
+  ],
+  [
+    "Agriculture, Construction, Mining Machinery Manufacturing",
+    "urn:li:ts_industry:901"
+  ],
+  [
+    "Agricultural Chemical Manufacturing",
+    "urn:li:ts_industry:709"
+  ],
+  [
+    "Airlines and Aviation",
+    "urn:li:ts_industry:94"
+  ],
+  [
+    "Air, Water, and Waste Program Management",
+    "urn:li:ts_industry:2366"
+  ],
+  [
+    "Water, Waste, Steam, and Air Conditioning Services",
+    "urn:li:ts_industry:398"
+  ],
+  [
+    "Alternative Dispute Resolution",
+    "urn:li:ts_industry:120"
+  ],
+  [
+    "Alternative Fuel Vehicle Manufacturing",
+    "urn:li:ts_industry:3253"
+  ],
+  [
+    "Wholesale Alcoholic Beverages",
+    "urn:li:ts_industry:1267"
+  ],
+  [
+    "Wholesale Chemical and Allied Products",
+    "urn:li:ts_industry:1257"
+  ],
+  [
+    "Amusement Parks and Arcades",
+    "urn:li:ts_industry:2167"
+  ],
+  [
+    "IT Services and IT Consulting",
+    "urn:li:ts_industry:96"
+  ],
+  [
+    "Hospitals and Health Care",
+    "urn:li:ts_industry:14"
+  ],
+  [
+    "Oil and Gas",
+    "urn:li:ts_industry:57"
+  ],
+  [
+    "Wellness and Fitness Services",
+    "urn:li:ts_industry:124"
+  ],
+  [
+    "Food and Beverage Services",
+    "urn:li:ts_industry:34"
+  ],
+  [
+    "Appliances, Electrical, and Electronics Manufacturing",
+    "urn:li:ts_industry:112"
+  ],
+  [
+    "Business Consulting and Services",
+    "urn:li:ts_industry:11"
+  ],
+  [
+    "Primary and Secondary Education",
+    "urn:li:ts_industry:67"
+  ],
+  [
+    "Transportation, Logistics, Supply Chain and Storage",
+    "urn:li:ts_industry:116"
+  ],
+  [
+    "Retail Apparel and Fashion",
+    "urn:li:ts_industry:19"
+  ],
+  [
+    "Retail Appliances, Electrical, and Electronic Equipment",
+    "urn:li:ts_industry:1319"
+  ],
+  [
+    "Wholesale Apparel and Sewing Supplies",
+    "urn:li:ts_industry:1222"
+  ],
+  [
+    "Wholesale Appliances, Electrical, and Electronics",
+    "urn:li:ts_industry:1171"
+  ],
+  [
+    "Household Appliance Manufacturing",
+    "urn:li:ts_industry:1005"
+  ],
+  [
+    "Apparel Manufacturing",
+    "urn:li:ts_industry:598"
+  ],
+  [
+    "Architecture and Planning",
+    "urn:li:ts_industry:50"
+  ],
+  [
+    "Travel Arrangements",
+    "urn:li:ts_industry:30"
+  ],
+  [
+    "Armed Forces",
+    "urn:li:ts_industry:71"
+  ],
+  [
+    "Retail Art Supplies",
+    "urn:li:ts_industry:111"
+  ],
+  [
+    "Artists and Writers",
+    "urn:li:ts_industry:38"
+  ],
+  [
+    "Performing Arts",
+    "urn:li:ts_industry:39"
+  ],
+  [
+    "Retail Art Dealers",
+    "urn:li:ts_industry:3186"
+  ],
+  [
+    "Performing Arts and Spectator Sports",
+    "urn:li:ts_industry:2130"
+  ],
+  [
+    "Public Assistance Programs",
+    "urn:li:ts_industry:2360"
+  ],
+  [
+    "Automation Machinery Manufacturing",
+    "urn:li:ts_industry:147"
+  ],
+  [
+    "Audio and Video Equipment Manufacturing",
+    "urn:li:ts_industry:973"
+  ],
+  [
+    "Banking",
+    "urn:li:ts_industry:41"
+  ],
+  [
+    "Investment Banking",
+    "urn:li:ts_industry:45"
+  ],
+  [
+    "Bars, Taverns, and Nightclubs",
+    "urn:li:ts_industry:2217"
+  ],
+  [
+    "Metal Valve, Ball, and Roller Manufacturing",
+    "urn:li:ts_industry:887"
+  ],
+  [
+    "Baked Goods Manufacturing",
+    "urn:li:ts_industry:529"
+  ],
+  [
+    "Food and Beverage Manufacturing",
+    "urn:li:ts_industry:23"
+  ],
+  [
+    "Beverage Manufacturing",
+    "urn:li:ts_industry:142"
+  ],
+  [
+    "Bed-and-Breakfasts, Hostels, Homestays",
+    "urn:li:ts_industry:2197"
+  ],
+  [
+    "Insurance and Employee Benefit Funds",
+    "urn:li:ts_industry:1743"
+  ],
+  [
+    "Food and Beverage Retail",
+    "urn:li:ts_industry:1339"
+  ],
+  [
+    "Wholesale Food and Beverage",
+    "urn:li:ts_industry:1231"
+  ],
+  [
+    "Biotechnology Research",
+    "urn:li:ts_industry:12"
+  ],
+  [
+    "Mattress and Blinds Manufacturing",
+    "urn:li:ts_industry:1095"
+  ],
+  [
+    "Book and Periodical Publishing",
+    "urn:li:ts_industry:82"
+  ],
+  [
+    "Zoos and Botanical Gardens",
+    "urn:li:ts_industry:2163"
+  ],
+  [
+    "Retail Books and Printed News",
+    "urn:li:ts_industry:1409"
+  ],
+  [
+    "Boilers, Tanks, and Shipping Container Manufacturing",
+    "urn:li:ts_industry:861"
+  ],
+  [
+    "Broadcast Media Production and Distribution",
+    "urn:li:ts_industry:36"
+  ],
+  [
+    "Loan Brokers",
+    "urn:li:ts_industry:1696"
+  ],
+  [
+    "Wholesale Building Materials",
+    "urn:li:ts_industry:49"
+  ],
+  [
+    "Retail Building Materials and Garden Equipment",
+    "urn:li:ts_industry:1324"
+  ],
+  [
+    "Building Construction",
+    "urn:li:ts_industry:406"
+  ],
+  [
+    "Personal Care Product Manufacturing",
+    "urn:li:ts_industry:18"
+  ],
+  [
+    "Capital Markets",
+    "urn:li:ts_industry:129"
+  ],
+  [
+    "Gambling Facilities and Casinos",
+    "urn:li:ts_industry:29"
+  ],
+  [
+    "Venture Capital and Private Equity Principals",
+    "urn:li:ts_industry:106"
+  ],
+  [
+    "Death Care Services",
+    "urn:li:ts_industry:3258"
+  ],
+  [
+    "Caterers",
+    "urn:li:ts_industry:2212"
+  ],
+  [
+    "Nursing Homes and Residential Care Facilities",
+    "urn:li:ts_industry:2091"
+  ],
+  [
+    "Telephone Call Centers",
+    "urn:li:ts_industry:1931"
+  ],
+  [
+    "Insurance Carriers",
+    "urn:li:ts_industry:1725"
+  ],
+  [
+    "Glass, Ceramics and Concrete Manufacturing",
+    "urn:li:ts_industry:145"
+  ],
+  [
+    "Fuel Cell Manufacturing",
+    "urn:li:ts_industry:3255"
+  ],
+  [
+    "Chemical Manufacturing",
+    "urn:li:ts_industry:54"
+  ],
+  [
+    "Chemical Raw Materials Manufacturing",
+    "urn:li:ts_industry:690"
+  ],
+  [
+    "Civil Engineering",
+    "urn:li:ts_industry:51"
+  ],
+  [
+    "Civic and Social Organizations",
+    "urn:li:ts_industry:90"
+  ],
+  [
+    "Circuses and Magic Shows",
+    "urn:li:ts_industry:2139"
+  ],
+  [
+    "Climate Data and Analytics",
+    "urn:li:ts_industry:3252"
+  ],
+  [
+    "Climate Technology Product Manufacturing",
+    "urn:li:ts_industry:3251"
+  ],
+  [
+    "Golf Courses and Country Clubs",
+    "urn:li:ts_industry:2179"
+  ],
+  [
+    "Sports Teams and Clubs",
+    "urn:li:ts_industry:2142"
+  ],
+  [
+    "Clay and Refractory Products Manufacturing",
+    "urn:li:ts_industry:773"
+  ],
+  [
+    "Soap and Cleaning Product Manufacturing",
+    "urn:li:ts_industry:727"
+  ],
+  [
+    "Construction",
+    "urn:li:ts_industry:48"
+  ],
+  [
+    "Consumer Services",
+    "urn:li:ts_industry:91"
+  ],
+  [
+    "Professional Training and Coaching",
+    "urn:li:ts_industry:105"
+  ],
+  [
+    "Computers and Electronics Manufacturing",
+    "urn:li:ts_industry:24"
+  ],
+  [
+    "Outsourcing and Offshoring Consulting",
+    "urn:li:ts_industry:123"
+  ],
+  [
+    "Public Relations and Communications Services",
+    "urn:li:ts_industry:98"
+  ],
+  [
+    "Computer Hardware Manufacturing",
+    "urn:li:ts_industry:3"
+  ],
+  [
+    "Credit Intermediation",
+    "urn:li:ts_industry:1673"
+  ],
+  [
+    "IT System Custom Software Development",
+    "urn:li:ts_industry:3102"
+  ],
+  [
+    "Cutlery and Handtool Manufacturing",
+    "urn:li:ts_industry:849"
+  ],
+  [
+    "Dairy Product Manufacturing",
+    "urn:li:ts_industry:65"
+  ],
+  [
+    "IT System Data Services",
+    "urn:li:ts_industry:3106"
+  ],
+  [
+    "Data Infrastructure and Analytics",
+    "urn:li:ts_industry:2458"
+  ],
+  [
+    "Dance Companies",
+    "urn:li:ts_industry:2135"
+  ],
+  [
+    "Software Development",
+    "urn:li:ts_industry:4"
+  ],
+  [
+    "Design Services",
+    "urn:li:ts_industry:99"
+  ],
+  [
+    "Defense and Space Manufacturing",
+    "urn:li:ts_industry:1"
+  ],
+  [
+    "International Trade and Development",
+    "urn:li:ts_industry:141"
+  ],
+  [
+    "Graphic Design",
+    "urn:li:ts_industry:140"
+  ],
+  [
+    "Regenerative Design",
+    "urn:li:ts_industry:3256"
+  ],
+  [
+    "Interior Design",
+    "urn:li:ts_industry:3126"
+  ],
+  [
+    "IT System Installation and Disposal",
+    "urn:li:ts_industry:3104"
+  ],
+  [
+    "Natural Gas Distribution",
+    "urn:li:ts_industry:397"
+  ],
+  [
+    "Electric Power Transmission, Control, and Distribution",
+    "urn:li:ts_industry:382"
+  ],
+  [
+    "Wholesale Drugs and Sundries",
+    "urn:li:ts_industry:1221"
+  ],
+  [
+    "Economic Programs",
+    "urn:li:ts_industry:2375"
+  ],
+  [
+    "Higher Education",
+    "urn:li:ts_industry:68"
+  ],
+  [
+    "Writing and Editing",
+    "urn:li:ts_industry:103"
+  ],
+  [
+    "Education",
+    "urn:li:ts_industry:1999"
+  ],
+  [
+    "Electrical Equipment Manufacturing",
+    "urn:li:ts_industry:2468"
+  ],
+  [
+    "Electric Lighting Equipment Manufacturing",
+    "urn:li:ts_industry:998"
+  ],
+  [
+    "Electric Power Generation",
+    "urn:li:ts_industry:383"
+  ],
+  [
+    "Entertainment Providers",
+    "urn:li:ts_industry:28"
+  ],
+  [
+    "Environmental Services",
+    "urn:li:ts_industry:86"
+  ],
+  [
+    "Law Enforcement",
+    "urn:li:ts_industry:77"
+  ],
+  [
+    "Energy Technology",
+    "urn:li:ts_industry:3259"
+  ],
+  [
+    "Robotics Engineering",
+    "urn:li:ts_industry:3248"
+  ],
+  [
+    "Services for Renewable Energy",
+    "urn:li:ts_industry:3243"
+  ],
+  [
+    "Engineering Services",
+    "urn:li:ts_industry:3242"
+  ],
+  [
+    "Engines and Power Transmission Equipment Manufacturing",
+    "urn:li:ts_industry:935"
+  ],
+  [
+    "Environmental Quality Programs",
+    "urn:li:ts_industry:388"
+  ],
+  [
+    "Medical Equipment Manufacturing",
+    "urn:li:ts_industry:17"
+  ],
+  [
+    "Retail Office Equipment",
+    "urn:li:ts_industry:138"
+  ],
+  [
+    "Railroad Equipment Manufacturing",
+    "urn:li:ts_industry:62"
+  ],
+  [
+    "Equipment Rental Services",
+    "urn:li:ts_industry:1779"
+  ],
+  [
+    "Real Estate and Equipment Rental Services",
+    "urn:li:ts_industry:1757"
+  ],
+  [
+    "Wholesale Hardware, Plumbing, Heating Equipment",
+    "urn:li:ts_industry:1178"
+  ],
+  [
+    "Real Estate",
+    "urn:li:ts_industry:44"
+  ],
+  [
+    "Trusts and Estates",
+    "urn:li:ts_industry:1750"
+  ],
+  [
+    "Events Services",
+    "urn:li:ts_industry:110"
+  ],
+  [
+    "IT System Testing and Evaluation",
+    "urn:li:ts_industry:3107"
+  ],
+  [
+    "Wholesale Import and Export",
+    "urn:li:ts_industry:134"
+  ],
+  [
+    "Executive Offices",
+    "urn:li:ts_industry:76"
+  ],
+  [
+    "Securities and Commodity Exchanges",
+    "urn:li:ts_industry:1713"
+  ],
+  [
+    "Facilities Services",
+    "urn:li:ts_industry:122"
+  ],
+  [
+    "Farming",
+    "urn:li:ts_industry:63"
+  ],
+  [
+    "Individual and Family Services",
+    "urn:li:ts_industry:88"
+  ],
+  [
+    "Recreational Facilities",
+    "urn:li:ts_industry:40"
+  ],
+  [
+    "Skiing Facilities",
+    "urn:li:ts_industry:2181"
+  ],
+  [
+    "Wholesale Raw Farm Products",
+    "urn:li:ts_industry:1250"
+  ],
+  [
+    "Turned Products and Fastener Manufacturing",
+    "urn:li:ts_industry:876"
+  ],
+  [
+    "Animal Feed Manufacturing",
+    "urn:li:ts_industry:481"
+  ],
+  [
+    "Financial Services",
+    "urn:li:ts_industry:43"
+  ],
+  [
+    "Fire Protection",
+    "urn:li:ts_industry:3070"
+  ],
+  [
+    "Office Furniture and Fixtures Manufacturing",
+    "urn:li:ts_industry:1090"
+  ],
+  [
+    "Artificial Rubber and Synthetic Fiber Manufacturing",
+    "urn:li:ts_industry:703"
+  ],
+  [
+    "Ranching and Fisheries",
+    "urn:li:ts_industry:256"
+  ],
+  [
+    "Retail Florists",
+    "urn:li:ts_industry:1423"
+  ],
+  [
+    "Paper and Forest Product Manufacturing",
+    "urn:li:ts_industry:61"
+  ],
+  [
+    "Mobile Food Services",
+    "urn:li:ts_industry:2214"
+  ],
+  [
+    "Wholesale Footwear",
+    "urn:li:ts_industry:1230"
+  ],
+  [
+    "Freight and Package Transportation",
+    "urn:li:ts_industry:87"
+  ],
+  [
+    "Fruit and Vegetable Preserves Manufacturing",
+    "urn:li:ts_industry:504"
+  ],
+  [
+    "Furniture and Home Furnishings Manufacturing",
+    "urn:li:ts_industry:26"
+  ],
+  [
+    "Philanthropic Fundraising Services",
+    "urn:li:ts_industry:131"
+  ],
+  [
+    "Fundraising",
+    "urn:li:ts_industry:101"
+  ],
+  [
+    "Funeral Services",
+    "urn:li:ts_industry:3257"
+  ],
+  [
+    "Pension Funds",
+    "urn:li:ts_industry:1745"
+  ],
+  [
+    "Funds and Trusts",
+    "urn:li:ts_industry:1742"
+  ],
+  [
+    "Retail Furniture and Home Furnishings",
+    "urn:li:ts_industry:1309"
+  ],
+  [
+    "Computer Games",
+    "urn:li:ts_industry:109"
+  ],
+  [
+    "Retail Gasoline",
+    "urn:li:ts_industry:1370"
+  ],
+  [
+    "Oil, Gas, and Mining",
+    "urn:li:ts_industry:332"
+  ],
+  [
+    "Retail Office Supplies and Gifts",
+    "urn:li:ts_industry:1424"
+  ],
+  [
+    "Glass Product Manufacturing",
+    "urn:li:ts_industry:779"
+  ],
+  [
+    "Government Relations Services",
+    "urn:li:ts_industry:148"
+  ],
+  [
+    "Retail Luxury Goods and Jewelry",
+    "urn:li:ts_industry:143"
+  ],
+  [
+    "Sporting Goods Manufacturing",
+    "urn:li:ts_industry:20"
+  ],
+  [
+    "Wholesale Luxury Goods and Jewelry",
+    "urn:li:ts_industry:1208"
+  ],
+  [
+    "Ground Passenger Transportation",
+    "urn:li:ts_industry:1495"
+  ],
+  [
+    "Lime and Gypsum Products Manufacturing",
+    "urn:li:ts_industry:794"
+  ],
+  [
+    "Construction Hardware Manufacturing",
+    "urn:li:ts_industry:871"
+  ],
+  [
+    "Women's Handbag Manufacturing",
+    "urn:li:ts_industry:625"
+  ],
+  [
+    "Public Health",
+    "urn:li:ts_industry:2358"
+  ],
+  [
+    "Health and Human Services",
+    "urn:li:ts_industry:2353"
+  ],
+  [
+    "Retail Health and Personal Care Products",
+    "urn:li:ts_industry:1359"
+  ],
+  [
+    "Museums, Historical Sites, and Zoos",
+    "urn:li:ts_industry:37"
+  ],
+  [
+    "Historical Sites",
+    "urn:li:ts_industry:2161"
+  ],
+  [
+    "Hospitality",
+    "urn:li:ts_industry:31"
+  ],
+  [
+    "Housing Programs",
+    "urn:li:ts_industry:3081"
+  ],
+  [
+    "Housing and Community Development",
+    "urn:li:ts_industry:2369"
+  ],
+  [
+    "Household Services",
+    "urn:li:ts_industry:2318"
+  ],
+  [
+    "Hotels and Motels",
+    "urn:li:ts_industry:2194"
+  ],
+  [
+    "Hospitals",
+    "urn:li:ts_industry:2081"
+  ],
+  [
+    "Human Resources Services",
+    "urn:li:ts_industry:137"
+  ],
+  [
+    "HVAC and Refrigeration Equipment Manufacturing",
+    "urn:li:ts_industry:923"
+  ],
+  [
+    "Insurance",
+    "urn:li:ts_industry:42"
+  ],
+  [
+    "Industrial Machinery Manufacturing",
+    "urn:li:ts_industry:135"
+  ],
+  [
+    "Security and Investigations",
+    "urn:li:ts_industry:121"
+  ],
+  [
+    "Investment Management",
+    "urn:li:ts_industry:46"
+  ],
+  [
+    "Information Services",
+    "urn:li:ts_industry:84"
+  ],
+  [
+    "Religious Institutions",
+    "urn:li:ts_industry:89"
+  ],
+  [
+    "IT System Training and Support",
+    "urn:li:ts_industry:3105"
+  ],
+  [
+    "IT System Operations and Maintenance",
+    "urn:li:ts_industry:3103"
+  ],
+  [
+    "IT System Design Services",
+    "urn:li:ts_industry:1855"
+  ],
+  [
+    "Law Practice",
+    "urn:li:ts_industry:9"
+  ],
+  [
+    "Courts of Law",
+    "urn:li:ts_industry:3065"
+  ],
+  [
+    "Personal and Laundry Services",
+    "urn:li:ts_industry:2258"
+  ],
+  [
+    "Legal Services",
+    "urn:li:ts_industry:10"
+  ],
+  [
+    "E-Learning Providers",
+    "urn:li:ts_industry:132"
+  ],
+  [
+    "Legislative Offices",
+    "urn:li:ts_industry:72"
+  ],
+  [
+    "Leather Product Manufacturing",
+    "urn:li:ts_industry:616"
+  ],
+  [
+    "Translation and Localization",
+    "urn:li:ts_industry:108"
+  ],
+  [
+    "Forestry and Logging",
+    "urn:li:ts_industry:298"
+  ],
+  [
+    "Motor Vehicle Manufacturing",
+    "urn:li:ts_industry:53"
+  ],
+  [
+    "Manufacturing",
+    "urn:li:ts_industry:25"
+  ],
+  [
+    "Pharmaceutical Manufacturing",
+    "urn:li:ts_industry:15"
+  ],
+  [
+    "Machinery Manufacturing",
+    "urn:li:ts_industry:55"
+  ],
+  [
+    "Medical Practices",
+    "urn:li:ts_industry:13"
+  ],
+  [
+    "Smart Meter Manufacturing",
+    "urn:li:ts_industry:3254"
+  ],
+  [
+    "Technology, Information and Media",
+    "urn:li:ts_industry:1594"
+  ],
+  [
+    "Retail Recyclable Materials & Used Merchandise",
+    "urn:li:ts_industry:1431"
+  ],
+  [
+    "Wholesale Metals and Minerals",
+    "urn:li:ts_industry:1166"
+  ],
+  [
+    "Magnetic and Optical Media Manufacturing",
+    "urn:li:ts_industry:994"
+  ],
+  [
+    "Measuring and Control Instrument Manufacturing",
+    "urn:li:ts_industry:983"
+  ],
+  [
+    "Metalworking Machinery Manufacturing",
+    "urn:li:ts_industry:928"
+  ],
+  [
+    "Mining",
+    "urn:li:ts_industry:56"
+  ],
+  [
+    "Movies, Videos, and Sound",
+    "urn:li:ts_industry:35"
+  ],
+  [
+    "Retail Motor Vehicles",
+    "urn:li:ts_industry:1292"
+  ],
+  [
+    "Wholesale Motor Vehicles and Parts",
+    "urn:li:ts_industry:1128"
+  ],
+  [
+    "Motor Vehicle Parts Manufacturing",
+    "urn:li:ts_industry:1042"
+  ],
+  [
+    "Musicians",
+    "urn:li:ts_industry:115"
+  ],
+  [
+    "Museums",
+    "urn:li:ts_industry:2159"
+  ],
+  [
+    "Retail Musical Instruments",
+    "urn:li:ts_industry:1407"
+  ],
+  [
+    "Nanotechnology Research",
+    "urn:li:ts_industry:114"
+  ],
+  [
+    "Computer and Network Security",
+    "urn:li:ts_industry:118"
+  ],
+  [
+    "Social Networking Platforms",
+    "urn:li:ts_industry:3127"
+  ],
+  [
+    "Non-profit Organizations",
+    "urn:li:ts_industry:100"
+  ],
+  [
+    "Public Policy Offices",
+    "urn:li:ts_industry:79"
+  ],
+  [
+    "Oil and Coal Product Manufacturing",
+    "urn:li:ts_industry:679"
+  ],
+  [
+    "Online and Mail Order Retail",
+    "urn:li:ts_industry:1445"
+  ],
+  [
+    "Operations Consulting",
+    "urn:li:ts_industry:2401"
+  ],
+  [
+    "Packaging and Containers Manufacturing",
+    "urn:li:ts_industry:146"
+  ],
+  [
+    "Wholesale Paper Products",
+    "urn:li:ts_industry:1212"
+  ],
+  [
+    "Wholesale Petroleum and Petroleum Products",
+    "urn:li:ts_industry:1262"
+  ],
+  [
+    "Photography",
+    "urn:li:ts_industry:136"
+  ],
+  [
+    "Retail Pharmacies",
+    "urn:li:ts_industry:3250"
+  ],
+  [
+    "Wholesale Photography Equipment and Supplies",
+    "urn:li:ts_industry:1153"
+  ],
+  [
+    "Pipeline Transportation",
+    "urn:li:ts_industry:1520"
+  ],
+  [
+    "Plastics Manufacturing",
+    "urn:li:ts_industry:117"
+  ],
+  [
+    "Community Development and Urban Planning",
+    "urn:li:ts_industry:2374"
+  ],
+  [
+    "Internet Marketplace Platforms",
+    "urn:li:ts_industry:1285"
+  ],
+  [
+    "Plastics and Rubber Product Manufacturing",
+    "urn:li:ts_industry:743"
+  ],
+  [
+    "Postal Services",
+    "urn:li:ts_industry:1573"
+  ],
+  [
+    "Printing Services",
+    "urn:li:ts_industry:83"
+  ],
+  [
+    "Public Safety",
+    "urn:li:ts_industry:78"
+  ],
+  [
+    "Racetracks",
+    "urn:li:ts_industry:2143"
+  ],
+  [
+    "Rail Transportation",
+    "urn:li:ts_industry:1481"
+  ],
+  [
+    "Farming, Ranching, Forestry",
+    "urn:li:ts_industry:201"
+  ],
+  [
+    "Retail",
+    "urn:li:ts_industry:27"
+  ],
+  [
+    "Restaurants",
+    "urn:li:ts_industry:32"
+  ],
+  [
+    "Research Services",
+    "urn:li:ts_industry:70"
+  ],
+  [
+    "Staffing and Recruiting",
+    "urn:li:ts_industry:104"
+  ],
+  [
+    "Robot Manufacturing",
+    "urn:li:ts_industry:3247"
+  ],
+  [
+    "Rubber Products Manufacturing",
+    "urn:li:ts_industry:763"
+  ],
+  [
+    "Savings Institutions",
+    "urn:li:ts_industry:1678"
+  ],
+  [
+    "Shipbuilding",
+    "urn:li:ts_industry:58"
+  ],
+  [
+    "Spectator Sports",
+    "urn:li:ts_industry:33"
+  ],
+  [
+    "Space Research and Technology",
+    "urn:li:ts_industry:3089"
+  ],
+  [
+    "Spring and Wire Product Manufacturing",
+    "urn:li:ts_industry:873"
+  ],
+  [
+    "Specialty Trade Contractors",
+    "urn:li:ts_industry:435"
+  ],
+  [
+    "Warehousing and Storage",
+    "urn:li:ts_industry:93"
+  ],
+  [
+    "Strategic Management Services",
+    "urn:li:ts_industry:102"
+  ],
+  [
+    "Architectural and Structural Metal Manufacturing",
+    "urn:li:ts_industry:852"
+  ],
+  [
+    "Surveying and Mapping Services",
+    "urn:li:ts_industry:3249"
+  ],
+  [
+    "Sugar and Confectionery Product Manufacturing",
+    "urn:li:ts_industry:495"
+  ],
+  [
+    "Think Tanks",
+    "urn:li:ts_industry:130"
+  ],
+  [
+    "Telecommunications",
+    "urn:li:ts_industry:8"
+  ],
+  [
+    "Textile Manufacturing",
+    "urn:li:ts_industry:60"
+  ],
+  [
+    "Technical and Vocational Training",
+    "urn:li:ts_industry:2018"
+  ],
+  [
+    "Theater Companies",
+    "urn:li:ts_industry:2133"
+  ],
+  [
+    "Tobacco Manufacturing",
+    "urn:li:ts_industry:21"
+  ],
+  [
+    "Truck Transportation",
+    "urn:li:ts_industry:92"
+  ],
+  [
+    "Maritime Transportation",
+    "urn:li:ts_industry:95"
+  ],
+  [
+    "Transportation Programs",
+    "urn:li:ts_industry:3085"
+  ],
+  [
+    "Utilities",
+    "urn:li:ts_industry:59"
+  ],
+  [
+    "Veterinary Services",
+    "urn:li:ts_industry:16"
+  ],
+  [
+    "Wholesale",
+    "urn:li:ts_industry:133"
+  ],
+  [
+    "Wood Product Manufacturing",
+    "urn:li:ts_industry:784"
+  ]
+]
