@@ -15,12 +15,10 @@ from linkedin_apiservice.management_service import LinkedInService
 from llms.chatgpt import ChatGPTWrapper
 
 from utils.general_utils import dedup_by_key, extract_json_markdown_block
-from utils.jd_understanding_utils import multi_filters_to_str, convert_location_list
-from utils.linkedin_formatter import convert_filters_to_sales_nav_conditions
+from utils.jd_understanding_utils import convert_location_list
 from linkedin_recruiter_apiservice.api_service import RecruiterService
 from utils.recruiter_api_formatter import convert_filters_to_recruiter_api_conditions
 from utils.search_utils import (
-    search_linkedin,
     batch_basic_linkedin_search,
     extract_candidate_info,
     improved_linkedin_search_api,
@@ -114,79 +112,8 @@ def main_linkedin_search_process(raw_filters: dict, job_skills_list, llm, channe
 
         print("==== Finish search via recruiter ====")
 
-
-    elif channel == "sales_nav":
-        import traceback
-        linkedin_enum_params = get_linkedin_enum_data()
-        linkedin_service = LinkedInService()
-
-        print(f"[sales_nav] channel repr: {repr(channel)}")
-        print(f"[sales_nav] raw_filters keys: {list(raw_filters.keys())}")
-        # 1. Convert raw search conditions to LinkedIn search condition
-        try:
-            sales_nav_conditions = convert_filters_to_sales_nav_conditions(
-                raw_filters, linkedin_service, linkedin_enum_params, llm
-            )
-        except Exception as e:
-            print("[sales_nav] convert_filters_to_sales_nav_conditions failed:", e)
-            print(traceback.format_exc())
-            raise
-
-        # naive contact filter string
-        try:
-            linkedin_format_filter_conditions = multi_filters_to_str(
-                sales_nav_conditions["filters"]
-            )
-        except Exception as e:
-            print("[sales_nav] multi_filters_to_str failed:", e)
-            print("[sales_nav] filters sample:", sales_nav_conditions.get("filters"))
-            print(traceback.format_exc())
-            raise
-
-        print("sales_nav_conditions:", sales_nav_conditions["filters"])
-
-        try:
-            search_results = search_linkedin(
-                linkedin_format_filter_conditions, job_required_main_skills_str
-            )
-        except Exception as e:
-            print("[sales_nav] search_linkedin failed:", e)
-            print("[sales_nav] linkedin_format_filter_conditions: ", linkedin_format_filter_conditions)
-            print("[sales_nav] job_required_main_skills_str: ", job_required_main_skills_str)
-            print(traceback.format_exc())
-            raise
-
-        input_tokens = sales_nav_conditions["input_tokens"]
-        output_tokens = sales_nav_conditions["output_tokens"]
-
-        # search_data = {
-        #     "filters": sales_nav_conditions,
-        #     "keywords": job_required_main_skills_str,
-        # }
-        # search_results = linkedin_service.filter_query_search(data=search_data)
-        # print("search_results:", search_results)
-        # 组合完整的搜索条件
-        complete_search_conditions = {
-            "filters": sales_nav_conditions["filters"],
-            "keywords": job_required_main_skills_str
-        }
-
-        try:
-            job_title_filter = [
-                sub_filter
-                for sub_filter in sales_nav_conditions["filters"]
-                if sub_filter["type"] == "CURRENT_TITLE"
-            ][0]
-        except Exception as e:
-            job_title_filter = {}
-            print(
-                "Error: job_title_filter not found in sales_nav_conditions['filters']:", e
-            )
-        job_title_candidates = (
-            job_title_filter["values"]
-            if len(job_title_filter) > 0
-            else raw_filters["job_title"][0]
-        )
+    else:
+        raise ValueError("Searching channel name is not allowed: {}".format(channel))
 
     inner_input_tokens += input_tokens
     inner_output_tokens += output_tokens

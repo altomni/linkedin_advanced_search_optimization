@@ -28,7 +28,7 @@ class LinkedInIntegrationService:
     def __init__(
         self,
         recruiter_api_base_url: str = "http://34.208.174.174:3022",
-        profile_api_base_url: str = f"{os.environ['LINKEDIN_SEARCH_BASE_IP']}:5678",
+        profile_api_base_url: Optional[str] = None,
         profile_api_key: str = "aisourcing2025",
     ):
         """
@@ -36,11 +36,16 @@ class LinkedInIntegrationService:
 
         Args:
             recruiter_api_base_url: LinkedIn Recruiter API基础URL
-            profile_api_base_url: Profile查询API基础URL
+            profile_api_base_url: Profile查询API基础URL（默认取 LINKEDIN_SEARCH_BASE_IP:5678，
+                该变量属于 navigator/profile 爬虫路径，未配置时为 None）
             profile_api_key: Profile查询API的认证密钥
         """
+        if profile_api_base_url is None:
+            base_ip = os.environ.get("LINKEDIN_SEARCH_BASE_IP")
+            profile_api_base_url = f"{base_ip}:5678" if base_ip else None
+
         self.recruiter_base_url = recruiter_api_base_url
-        self.profile_base_url = profile_api_base_url
+        self.profile_base_url: Optional[str] = profile_api_base_url
         self.profile_api_key = profile_api_key
 
         # 生成Bearer Token

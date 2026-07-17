@@ -1,4 +1,3 @@
-import os
 # import sys
 # from pathlib import Path
 
@@ -13,7 +12,6 @@ import math
 from typing import Tuple
 
 import pandas as pd
-import requests
 from dateutil.relativedelta import relativedelta
 from dotenv import load_dotenv
 import time
@@ -58,53 +56,6 @@ def expand_search_min_max_years(min_year: int, max_year: int) -> Tuple[int, int]
     return search_min_years, search_max_years
 
 
-def search_linkedin(linkedin_format_filter_conditions, job_skills_str, start_id="0"):
-    url = os.environ.get("LINKEDIN_SEARCH_URL")
-    # url = "http://23.84.177.165:3456/api/linkedin/sales/search"
-    # print(f"filter_str:{linkedin_format_filter_conditions}")
-    payload = {
-        "filters": linkedin_format_filter_conditions,
-        "keywords": job_skills_str,
-        "start": start_id,
-    }
-    headers = {"Content-Type": "application/json"}
-    response = requests.post(url, json=payload, headers=headers, timeout=30)
-
-    # Example usage
-    # print(response.status_code)
-    response_dict = response.json()
-
-    # payload = {
-    #     "filters": (
-    #         "List((type:SENIORITY_V2,"
-    #         "values:List((id:6,text:Director,selectionType:INCLUDED),"
-    #         "(id:8,text:CXO,selectionType:INCLUDED))))"
-    #     ),
-    #     "start": "0"
-    # }
-
-    # payload = {
-    #     "filters": (
-    #         "List((type:SENIORITY_V2,"
-    #         "values:List((id:6,text:Director,selectionType:INCLUDED),"
-    #         "(id:8,text:CXO,selectionType:INCLUDED))))"
-    #     ),
-    #     "start": "0"
-    # }
-
-    # filter_str = filters_to_str({'type': 'FUNCTION',
-    #                              'values': [{'id': '8', 'selectionType': 'INCLUDED', 'text': 'Engineering'},
-    #                                         {'id': '19', 'selectionType': 'INCLUDED', 'text': 'Product Management'}]})
-
-    # payload = {
-    #     "filters": (
-    #         "List((type:SENIORITY_V2,values:List((id:6,text:Director,selectionType:INCLUDED),(id:8,text:CXO,selectionType:INCLUDED))))"
-    #     ),
-    #     "start": "0"
-    # }
-
-    return response_dict
-
 def batch_basic_linkedin_search(
     search_results_num,
     format_filter_conditions,
@@ -141,13 +92,6 @@ def batch_basic_linkedin_search(
             print(f"[ERROR] batch_basic_linkedin_search API call failed: {e}")
             import traceback
             traceback.print_exc()
-        return final_search_results
-    elif channel == "sales_nav":
-        for start_id in range(0, max_search_num, records_per_search):
-            search_results = search_linkedin(
-                format_filter_conditions, job_main_skills, start_id=str(start_id)
-            )
-            final_search_results.extend(search_results["data"]["elements"])
         return final_search_results
     else:
         raise ValueError("Searching channel name is not allowed: {}".format(channel))
