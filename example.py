@@ -14,7 +14,7 @@ if not jd_path:
 union_df, stats = optimize_and_fetch_union(
     job_desc=open(jd_path).read(),
     min_target=200, max_target=600,
-    max_search_num=200,
+    max_search_num=500,
 )
 
 print(f"\narchetypes: {stats['n_archetypes']}")

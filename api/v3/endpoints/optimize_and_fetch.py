@@ -32,7 +32,7 @@ class OptimizeAndFetchRequest(BaseModel):
     relaxation_options: Dict[str, Any] = Field(default_factory=dict)
     min_target: int = Field(200, ge=0)
     max_target: int = Field(600, ge=0)
-    max_search_num: int = Field(200, ge=1, le=500, description="per-archetype fetch cap")
+    max_search_num: int = Field(500, ge=1, le=500, description="per-archetype fetch cap")
     channel: str = Field("recruiter")
 
 

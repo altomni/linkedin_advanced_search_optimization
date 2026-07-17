@@ -61,7 +61,7 @@ def batch_basic_linkedin_search(
     format_filter_conditions,
     job_main_skills,
     records_per_search=25,
-    max_search_num=200,
+    max_search_num=500,
     channel = "recruiter"
 ):
     final_search_results = []

@@ -33,7 +33,7 @@ from optimize_and_fetch import optimize_and_fetch_union
 union_df, stats = optimize_and_fetch_union(
     job_desc=open("my_jd.txt").read(),   # JD-driven multi-archetype mode
     min_target=200, max_target=600,
-    max_search_num=200,                  # per-archetype fetch cap
+    max_search_num=500,                  # per-archetype fetch cap
 )
 # union_df -> candidate DataFrame, unioned across archetypes, deduped by linkedin_id
 # stats    -> n_archetypes, per_archetype fetch counts, final_count_estimate,

@@ -24,7 +24,7 @@ if not jd_path:
 payload = {
     "job_desc": open(jd_path).read(),
     "min_target": 200, "max_target": 600,
-    "max_search_num": 200,   # per-archetype fetch cap
+    "max_search_num": 500,   # per-archetype fetch cap
 }
 
 # Fail fast with a clear message if the service isn't up.

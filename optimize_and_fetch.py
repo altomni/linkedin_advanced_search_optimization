@@ -11,7 +11,7 @@ Library use:
     union_df, stats = optimize_and_fetch_union(job_desc=open("jd.txt").read())
 
 CLI:
-    python optimize_and_fetch.py path/to/jd.txt [--max-search 200] [--out union.csv]
+    python optimize_and_fetch.py path/to/jd.txt [--max-search 500] [--out union.csv]
 
 (Synced from JDSearchAgent/src/graphs_v2/optimize_and_fetch.py — PIPELINED version: each
 archetype's fetch starts the moment its optimization finishes.)
@@ -77,7 +77,7 @@ def _fetch_archetype(archetype, final_skills, max_search_num, channel):
 
 def optimize_and_fetch_union(job_desc=None, initial_conditions=None, mandatory_skills=None,
                              relaxation_options=None, min_target=200, max_target=600,
-                             max_search_num=200, channel="recruiter", workers=10,
+                             max_search_num=500, channel="recruiter", workers=10,
                              clear_caches=True, return_optimization=False):
     """Steps 1-3 of the graphs_v2 pipeline's search phase, self-contained:
     1. v3 multi-archetype optimization -> several optimized search conditions;
@@ -178,7 +178,7 @@ if __name__ == "__main__":
     ap.add_argument("jd_file", help="path to a JD text file")
     ap.add_argument("--min-target", type=int, default=200)
     ap.add_argument("--max-target", type=int, default=600)
-    ap.add_argument("--max-search", type=int, default=200, help="per-archetype fetch cap")
+    ap.add_argument("--max-search", type=int, default=500, help="per-archetype fetch cap")
     ap.add_argument("--channel", default="recruiter", choices=["recruiter", "sales_nav"])
     ap.add_argument("--out", default="union_candidates.csv", help="output CSV path")
     args = ap.parse_args()
