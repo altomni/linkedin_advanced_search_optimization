@@ -50,13 +50,27 @@ python optimize_and_fetch.py path/to/jd.txt --max-search 200 --out union.csv
 
 ## Deployment (Docker)
 
-REST service (`serve.py`, FastAPI + uvicorn) on port **5178** by default — override with
-`ASO_V3_PORT`:
+The compose stack runs three services: the REST API (`serve.py`, FastAPI + uvicorn, port
+**5178** — override with `ASO_V3_PORT`), the async task worker (`optimize_fetch_worker.py`,
+consumes `/v3/optimize-fetch-tasks` jobs), and a bundled `redis` (queue/status/result
+store — used unless `.env` sets `REDIS_HOST` to an external Redis). See
+`DEPLOYMENT_ASYNC_OPTFETCH.md` for the async task pattern details.
+
+**Deploy / start serving:**
 
 ```bash
-docker compose up -d --build          # http://127.0.0.1:5178
+docker compose up -d --build          # build + start all services -> http://127.0.0.1:5178
 ASO_V3_PORT=8080 docker compose up -d --build   # custom 部署端口
 curl http://127.0.0.1:5178/v3/health  # verify; Swagger UI at /docs
+
+docker compose up -d --scale optfetch-worker=3  # more concurrent async tasks
+```
+
+**Stop serving:**
+
+```bash
+docker compose stop                   # stop all services; containers + Redis data kept
+docker compose start                  # resume serving (no rebuild)
 ```
 
 Call the deployed service with one JD over HTTP (start the service first) — using the
@@ -71,16 +85,79 @@ ASO_V3_SERVICE_URL=http://127.0.0.1:8080 python examples/example_service.py exam
 This POSTs to `/v3/optimize-and-fetch` and writes the unioned candidates to
 `union_candidates.csv` — the HTTP counterpart of the in-process `example.py`.
 
+---
+
+## Async task flow (curl): submit → poll status → download candidates
+
+The synchronous `/v3/optimize-and-fetch` call blocks for several minutes. The async task
+endpoints return immediately and run the job in the worker, with Redis as the
+queue/status/result store:
+
+```bash
+BASE_URL=http://localhost:5178   # replace with your deployed host
+
+# 0. (optional) confirm the service is up
+curl -s $BASE_URL/v3/health
+
+# 1. Submit the job — returns 202 + task_id immediately
+TASK_ID=$(curl -s -X POST $BASE_URL/v3/optimize-fetch-tasks \
+  -H "Content-Type: application/json" \
+  -d '{
+    "job_desc": "Senior Backend Engineer with 5+ years Python, Kubernetes... (full JD text)",
+    "min_target": 200,
+    "max_target": 600,
+    "max_search_num": 500,
+    "channel": "recruiter"
+  }' | jq -r '.task_id')
+echo "task_id: $TASK_ID"
+
+# 2. Check status: queued -> running -> done | failed
+#    (include_result=false keeps the response small while it runs;
+#    archetypes_done / candidates_pushed advance per archetype)
+curl -s "$BASE_URL/v3/optimize-fetch-tasks/$TASK_ID?include_result=false" | jq
+
+#    ...or poll automatically until it finishes:
+while true; do
+  STATUS=$(curl -s "$BASE_URL/v3/optimize-fetch-tasks/$TASK_ID?include_result=false" | jq -r '.status')
+  echo "$(date +%T) status=$STATUS"
+  [ "$STATUS" = "done" ] || [ "$STATUS" = "failed" ] && break
+  sleep 15
+done
+
+# 3. Download the result once done (stored in Redis at optfetch:result:{task_id})
+curl -s "$BASE_URL/v3/optimize-fetch-tasks/$TASK_ID" | jq '.result' > result.json                          # full result: candidates + stats + archetype conditions
+curl -s "$BASE_URL/v3/optimize-fetch-tasks/$TASK_ID" | jq -r '.result.union_candidates_csv' > candidates.csv  # just the candidate table
+```
+
+`candidates.csv` columns: `linkedin_id, first_name, last_name, degree, location,
+person_summary, cur_job_summary, prev_job_summary, total_experience_years,
+education_summary, open_to_opportunities`.
+
+Notes:
+
+- `job_desc` and/or `initial_conditions` is required; optional fields include `workers`
+  (fetch pool size) and `push_to_rerank` + `rerank_job_context` to stream each
+  archetype's candidates into the reranking Redis queue as they are fetched.
+- The result has a TTL in Redis — download it reasonably soon after completion; after
+  expiry the GET returns 404 ("Unknown or expired task").
+- To bypass the API and read Redis directly (e.g. debugging inside the compose network):
+  `redis-cli GET optfetch:result:<task_id>` (result JSON) and
+  `redis-cli HGETALL optfetch:task:<task_id>` (status hash).
+
 Secrets come from `.env` at runtime (`env_file` in compose.yaml) — they are never baked
 into the image (`.env` is in `.dockerignore`).
 
-Tear the service down when you're done:
+Tear the stack down completely when you're done (vs. `stop`, which keeps everything for
+a quick `start`):
 
 ```bash
-docker compose down                   # stop + remove the container and network
+docker compose down                   # stop + remove containers and network (Redis volume kept)
+docker compose down -v                # also remove the Redis data volume (queued tasks/results lost)
 docker compose down --rmi local       # also remove the built linkedin-aso image
-docker compose logs -f linkedin-aso   # (optional) tail logs before tearing down
+docker compose logs -f linkedin-aso   # (optional) tail API logs; use optfetch-worker for the worker
 ```
+
+---
 
 ## Testing
 

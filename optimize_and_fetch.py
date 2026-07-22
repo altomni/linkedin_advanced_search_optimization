@@ -78,7 +78,8 @@ def _fetch_archetype(archetype, final_skills, max_search_num, channel):
 def optimize_and_fetch_union(job_desc=None, initial_conditions=None, mandatory_skills=None,
                              relaxation_options=None, min_target=200, max_target=600,
                              max_search_num=500, channel="recruiter", workers=10,
-                             clear_caches=True, return_optimization=False):
+                             clear_caches=True, return_optimization=False,
+                             on_fetch_done=None):
     """Steps 1-3 of the graphs_v2 pipeline's search phase, self-contained:
     1. v3 multi-archetype optimization -> several optimized search conditions;
     2. per-condition candidate fetch (profiles ride along with the search results);
@@ -88,7 +89,12 @@ def optimize_and_fetch_union(job_desc=None, initial_conditions=None, mandatory_s
     return_optimization=True (callers that display the archetype conditions, e.g. the
     standalone streamlit app). NOTE: this is the primary per-archetype fetch only — the
     graphs_v2 search_graph's company/language second searches and the education-based
-    language filter are not part of this file."""
+    language filter are not part of this file.
+
+    on_fetch_done(archetype_row, label, rows): optional callback fired from a fetch-pool
+    thread as soon as EACH archetype's fetch completes (rows = tuples in CANDIDATE_COLUMNS
+    order). Lets callers stream partial results (e.g. the async worker pushing candidates
+    to the reranking Redis queue) instead of waiting for the full union."""
     if clear_caches:
         clear_optimization_caches()
     reset_linkedin_call_count()
@@ -110,9 +116,17 @@ def optimize_and_fetch_union(job_desc=None, initial_conditions=None, mandatory_s
                 return
             _submitted.add(a.get("label"))
             print(f"  [pipeline] '{a.get('label')}' optimized -> fetch started", flush=True)
-            fetch_futures.append(
-                (a, fetch_pool.submit(_fetch_archetype, a, a.get("final_skills") or [],
-                                      max_search_num, channel)))
+            fut = fetch_pool.submit(_fetch_archetype, a, a.get("final_skills") or [],
+                                    max_search_num, channel)
+            if on_fetch_done is not None:
+                def _notify(f, _a=a):
+                    try:
+                        label, rows = f.result()
+                        on_fetch_done(_a, label, rows)
+                    except Exception as e:
+                        print(f"  [pipeline] on_fetch_done failed for '{_a.get('label')}': {e}")
+                fut.add_done_callback(_notify)
+            fetch_futures.append((a, fut))
 
     t0 = time.time()
     optimization_result = single_process(

@@ -10,6 +10,9 @@ Endpoints:
     GET  /v3/health
     POST /v3/optimize-search        (parsing_result -> optimized archetype conditions)
     POST /v3/optimize-and-fetch     (JD/conditions -> union candidate records + stats)
+    POST /v3/optimize-fetch-tasks   (async task pattern: 202 + task_id; needs Redis +
+                                     optimize_fetch_worker.py running)
+    GET  /v3/optimize-fetch-tasks/{task_id}   (poll status; result when done)
     Swagger UI at /docs
 
 Consumers: JDSearchAgent's src/graphs_v2/whole_pipeline_v2_standalone_streamlit.py calls
@@ -32,6 +35,7 @@ from fastapi import FastAPI
 from api.v3.endpoints.health import router as health_router
 from api.v3.endpoints.optimize_search import router as optimize_search_router
 from api.v3.endpoints.optimize_and_fetch import router as optimize_and_fetch_router
+from api.v3.endpoints.optimize_fetch_async import router as optimize_fetch_async_router
 
 app = FastAPI(
     title="linkedin_advanced_search_optimization deployment",
@@ -42,6 +46,7 @@ app = FastAPI(
 app.include_router(health_router, prefix="/v3", tags=["Health"])
 app.include_router(optimize_search_router, prefix="/v3", tags=["Optimize"])
 app.include_router(optimize_and_fetch_router, prefix="/v3", tags=["Optimize + Fetch"])
+app.include_router(optimize_fetch_async_router, prefix="/v3", tags=["Optimize + Fetch (Async Tasks)"])
 
 if __name__ == "__main__":
     import uvicorn

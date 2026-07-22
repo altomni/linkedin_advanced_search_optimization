@@ -7,6 +7,38 @@ services:
     environment:
       ASO_V3_HOST: 0.0.0.0
       PORT: ${ASO_V3_PORT:-5178}       # 部署端口 (container-internal, matches serve.py)
+      REDIS_HOST: ${REDIS_HOST:-redis}   # .env wins; bundled redis is the fallback
     ports:
       - "${ASO_V3_PORT:-5178}:${ASO_V3_PORT:-5178}"   # host:container 部署端口
     restart: unless-stopped
+
+  # Async optimize-fetch worker (consumes /v3/optimize-fetch-tasks queue).
+  # Each replica runs ONE multi-minute task at a time; scale with:
+  #   docker compose up -d --scale optfetch-worker=3
+  optfetch-worker:
+    build: .
+    image: linkedin-aso
+    command: python optimize_fetch_worker.py
+    env_file: .env
+    environment:
+      REDIS_HOST: ${REDIS_HOST:-redis}   # must match linkedin-aso, or tasks are enqueued where no worker looks
+    restart: unless-stopped
+    stop_grace_period: 30s    # then SIGKILL; the stale-task reclaim requeues any mid-run task
+    healthcheck:
+      disable: true           # inherited image healthcheck curls /v3/health, which the worker doesn't serve
+
+  # Bundled Redis (queue/status/result store). Unused when .env points REDIS_HOST elsewhere.
+  redis:
+    image: redis:7-alpine
+    command: redis-server --appendonly yes   # persist queued tasks across restarts
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    restart: unless-stopped
+
+volumes:
+  redis-data:
